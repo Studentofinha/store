@@ -56,9 +56,9 @@ header{
     background-color:#f4f4f4
 
 }
-header h1{
+/* header h1{
 
-}
+} */
 
 header sub-title{
     margin-top: 20px;
@@ -99,9 +99,9 @@ main .left a:hover{
 
 }
 
-main .right{
+/* main .right{
 
-}
+} */
 
 main .right .product{
         display: grid;
