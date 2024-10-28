@@ -1,0 +1,195 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    min-height: 100%;
+    color: #555;
+}
+
+ nav{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-column-gap: 30px;
+    grid-template-rows:70px;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+
+ }
+
+nav .brand{
+    font-size:28px;
+    font-weight: bold;
+    color: #245990;
+
+}
+
+nav a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 35px;
+    transition: background-color 0.3s, color 0.3s;
+    color: #245990;
+    font-size: 18px;
+}
+
+nav a:hover,
+nav a.active{
+    background: #4d9176;
+    color: #fff;
+    border-radius: 3px;
+}
+
+
+/* ----- Header */
+
+header{
+    padding : 40px 20px;
+    background-color:#f4f4f4
+
+}
+header h1{
+
+}
+
+header sub-title{
+    margin-top: 20px;
+    line-height: 20px;
+}
+/*  ----- MAIN */
+
+main{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-column-gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+main .section-title{
+    font-size: 22px;
+    margin-bottom: 30px;
+
+}
+
+main .left{
+    border-right: thin solid #d4d4d4;
+    padding-right: 20px;
+}
+
+main .left a{
+    display: block;
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+main .left a:hover{
+    text-decoration: underline;
+
+}
+
+main .right{
+
+}
+
+main .right .product{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
+}
+main .right .product-left img{
+    height: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
+main .right .title a{
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    color: #555;
+    line-height: 26px;
+}
+
+main .right .title a:hover{
+    text-decoration: underline;
+}
+
+main .right .description{
+    margin-top: 10px;
+}
+main .right .price{
+    font-size: 24px;
+    margin-top: 30px;
+    color: darkred;
+     
+}
+
+
+/*  ----- FOOTER */
+
+footer{
+    background-color: #333;
+    padding: 20px;
+    width: 100%;
+    color: white;
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1024px) {
+    nav .brand {
+        font-size: 26px;
+    }
+
+    nav a {
+        padding: 10px 30px;
+        font-size: 17px;
+    }
+
+    header h1 {
+        font-size: 2.2rem;
+    }
+
+    .sub-title {
+        font-size: 1.1rem;
+    }
+}
+
+/* Mobile phones (480px and below) */
+@media only screen and (max-width: 480px) {
+    nav {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    nav .links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav a {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .sub-title {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
