@@ -140,11 +140,30 @@ main .right .price{
 
 /*  ----- FOOTER */
 
-footer{
+/* footer{
     background-color: #333;
     padding: 20px;
     width: 100%;
     color: white;
+} */
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+footer a:hover {
+    color: #4d9176; /* Change link color on hover */
 }
 
 @media only screen and (max-width: 1440px) and (min-width: 1024px) {
