@@ -2,7 +2,7 @@
 
 define('SERVER','localhost');
 
-define('USERNAME','admin');
+define('USERNAME','root');
 
 define('PASSWORD','');
 

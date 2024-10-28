@@ -64,29 +64,12 @@
                 <div class="product-right">
                     <p class="title">
                            <?php echo $product[0]['title'] ?>
-                       
                     </p>
                     <p class="description">
-                        <?php echo $products[0]['description'] ?>
+                        <?php echo $product[0]['description'] ?>
                     </p>
                     <p class="price">
-                        <?php echo $product[0]['price'] ?>&usd;
-                    </p>
-                </div>
-                <div class="product-left">
-                    <img src="products/coding.jpg" alt="">
-                </div>
-                <div class="product-right">
-                    <p class="title">
-                        <a href="">Coding is fun</a>
-                    </p>
-                    <p class="description">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem ipsa sapiente, repellat
-                        voluptas aspernatur velit sequi quia provident? Obcaecati pariatur laudantium, doloremque
-                        molestiae ex architecto nostrum ad modi eaque quia?
-                    </p>
-                    <p class="price">
-                        200$
+                        <?php echo $product[0]['price'] ?>
                     </p>
                 </div>
             </div>

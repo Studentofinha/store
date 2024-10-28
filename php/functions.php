@@ -46,16 +46,24 @@ function getProductsByCategory($category){
     $data=$result->fetch_all(MYSQLI_ASSOC);
     return $data;
     }
-   function getProductByTitle($int){
-    $mysqli=dbConnect();
-
-
-    $smtp=$mysqli->prepare("SELECT *FROM products WHERE title =?");
-    $smtp->bind_param("s",$title);
-    $smtp->execute();
-    $result=$smtp->get_result();
-    $data=$result->fetch_all(MYSQLI_ASSOC);
-    return $data;
+  /**
+ * The getProductBytitle function will fetch the product by its title.
+ * @param  [string] $title [The product's title]
+ * @return [array]        [The fetched product]
+ */
+function getProductBytitle($title){
+    $mysqli = dbConnect();
+    $stmt = $mysqli->prepare("SELECT * FROM products WHERE title = ?");
+    $stmt->bind_param("s", $title);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $data = $result->fetch_all(MYSQLI_ASSOC);
+    if(count($data) == 0){
+       header("Location: index.php");
+       exit();
+    }else{
+       return $data;
     }
+ }
 
 ?>
