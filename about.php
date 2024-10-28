@@ -16,7 +16,7 @@
     </style>
 </head>
 
-<body>
+<body id="about">
 
 
 <?php include "includes/nav.php" ?>

@@ -1,4 +1,17 @@
 <?php require "php/functions.php" ?>
+
+<?php
+if(isset($_GET['category'])){
+    $cat = $_GET['category'];
+ }else{
+    header("Location: index.php");
+    exit();
+ }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +30,7 @@
     </style>
 </head>
 
-<body id="index ">
+<body>
 
 
     <?php include "includes/nav.php" ?>
@@ -27,7 +40,7 @@
     <main>
         <div class="left">
             <div class="section-title">
-                Product categories
+                Product Categories
             </div>
             <?php $categories = getCategories() ?>
             <?php
@@ -43,13 +56,8 @@
             ?>
         </div>
         <div class="right">
-            <div class="section-title">Home page</div>
-            <?php
-            $products = getHomePageProducts(4)
-
-                ?>
-
-
+            <div class="section-title"> Product in the <?php echo ucfirst($cat) ?> category</div>
+            <?php $products = getProductsByCategory($cat)?>
             <div class="product">
 
                 <?php

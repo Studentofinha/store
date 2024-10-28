@@ -1,14 +1,26 @@
 <?php require "php/functions.php" ?>
+
+<?php 
+   if(isset($_GET['title'])){
+      $title = urldecode($_GET['title']);
+   }else{
+      header("Location: index.php");
+      exit();
+   }
+?>
+<?php $product = getProductBytitle($title) ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name='description' content="we hava a collection of servers , laptops and personal computers">
-    <meta name='keywords' content="phones , books, servers, pc, personal computers">
+    <meta name='description' content="<?php echo $product[0]['meta_description'] ?>">
+    <meta name='keywords' content="<?php echo $product[0]['meta_keywords'] ?>">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Our store</title>
+    <title><?php echo $title ?></title>
     <style>
         footer {
             position: fixed;
@@ -17,7 +29,7 @@
     </style>
 </head>
 
-<body id="index ">
+<body>
 
 
     <?php include "includes/nav.php" ?>
@@ -27,7 +39,7 @@
     <main>
         <div class="left">
             <div class="section-title">
-                Product categories
+                Product Categories
             </div>
             <?php $categories = getCategories() ?>
             <?php
@@ -43,40 +55,24 @@
             ?>
         </div>
         <div class="right">
-            <div class="section-title">Home page</div>
-            <?php
-            $products = getHomePageProducts(4)
-
-                ?>
-
-
+            <div class="section-title"> Product details</div>
             <div class="product">
 
-                <?php
-                foreach ($products as $product) {
-                    ?>
-
-                    <div class="product-left">
-                        <img src="<?php echo "products/{$product['image']}" ?>" alt="">
-                    </div>
-                    <div class="product-right">
-                        <p class="title">
-                            <a href="product.php?title=<?php echo urlencode($product['title']) ?>">
-                                <?php echo $product['title'] ?>
-                            </a>
-                        </p>
-                        <p class="description">
-                            <?php echo $products['description'] ?>
-                        </p>
-                        <p class="price">
-                            <?php echo $product['price'] ?>
-                        </p>
-                    </div>
-                    <?php
-                }
-                ?>
-
-
+                <div class="product-left">
+                    <img src="<?php echo "products/{$product[0]['image']}" ?>" alt="">
+                </div>
+                <div class="product-right">
+                    <p class="title">
+                           <?php echo $product[0]['title'] ?>
+                       
+                    </p>
+                    <p class="description">
+                        <?php echo $products[0]['description'] ?>
+                    </p>
+                    <p class="price">
+                        <?php echo $product[0]['price'] ?>&usd;
+                    </p>
+                </div>
                 <div class="product-left">
                     <img src="products/coding.jpg" alt="">
                 </div>

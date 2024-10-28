@@ -36,5 +36,26 @@ function getHomePageProducts($int){
 
 }
 
+function getProductsByCategory($category){
+    $mysqli=dbConnect();
+
+    $smtp=$mysqli->prepare("SELECT *FROM products WHERE category =?");
+    $smtp->bind_param("s",$category);
+    $smtp->execute();
+    $result=$smtp->get_result();
+    $data=$result->fetch_all(MYSQLI_ASSOC);
+    return $data;
+    }
+   function getProductByTitle($int){
+    $mysqli=dbConnect();
+
+
+    $smtp=$mysqli->prepare("SELECT *FROM products WHERE title =?");
+    $smtp->bind_param("s",$title);
+    $smtp->execute();
+    $result=$smtp->get_result();
+    $data=$result->fetch_all(MYSQLI_ASSOC);
+    return $data;
+    }
 
 ?>
