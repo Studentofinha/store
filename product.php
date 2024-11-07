@@ -22,10 +22,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <title><?php echo $title ?></title>
     <style>
-        footer {
-            position: fixed;
-            bottom: 0;
-        }
+      
     </style>
 </head>
 

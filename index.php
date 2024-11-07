@@ -10,10 +10,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Our store</title>
     <style>
-        footer {
+          footer {
             position: fixed;
             bottom: 0;
+            width: 100%; /* Ensure footer spans the full width */
+            z-index: 10; /* Bring footer above other elements */
         }
+        
     </style>
 </head>
 
@@ -50,32 +53,32 @@
                 ?>
 
 
-            <div class="product">
+<div class="product">
 
-                <?php
-                foreach ($products as $product) {
-                    ?>
+<?php
+foreach ($products as $product) {
+    ?>
 
-                    <div class="product-left">
-                        <img src="<?php echo "products/{$product['image']}" ?>" alt="">
-                    </div>
-                    <div class="product-right">
-                        <p class="title">
-                            <a href="product.php?title=<?php echo urlencode($product['title']) ?>">
-                                <?php echo $product['title'] ?>
-                            </a>
-                        </p>
-                        <p class="description">
-                            <?php echo $products['description'] ?>
-                        </p>
-                        <p class="price">
-                            <?php echo $product['price'] ?>$
-                        </p>
-                    </div>
-                    <?php
-                }
-                ?>
-            </div>
+    <div class="product-left">
+        <img src="<?php echo "products/{$product['image']}" ?>" alt="">
+    </div>
+    <div class="product-right">
+        <p class="title">
+            <a href="product.php?title=<?php echo urlencode($product['title']) ?>">
+                <?php echo $product['title'] ?>
+            </a>
+        </p>
+        <p class="description">
+            <?php echo $product['description'] ?>
+        </p>
+        <p class="price">
+            <?php echo $product['price'] ?>$
+        </p>
+    </div>
+    <?php
+}
+?>
+</div>
         </div>
     </main>
 

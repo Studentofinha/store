@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Contact</title>
     <style>
-        footer{
+        footer {
             position: fixed;
             bottom: 0;
+            width: 100%; /* Ensure footer spans the full width */
+            z-index: 10; /* Bring footer above other elements */
         }
+        
     </style>
 </head>
 

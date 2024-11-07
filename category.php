@@ -23,10 +23,7 @@ if(isset($_GET['category'])){
     <link rel="stylesheet" href="css/styles.css">
     <title>Our store</title>
     <style>
-        footer {
-            position: fixed;
-            bottom: 0;
-        }
+       
     </style>
 </head>
 
