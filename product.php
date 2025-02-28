@@ -66,7 +66,7 @@
                         <?php echo $product[0]['description'] ?>
                     </p>
                     <p class="price">
-                        <?php echo $product[0]['price'] ?>
+                        <?php echo $product[0]['price'],'$' ?>
                     </p>
                 </div>
             </div>

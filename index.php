@@ -72,7 +72,7 @@ foreach ($products as $product) {
             <?php echo $product['description'] ?>
         </p>
         <p class="price">
-            <?php echo $product['price'] ?>$
+            <?php echo $product['price'],'$' ?>
         </p>
     </div>
     <?php

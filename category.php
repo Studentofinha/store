@@ -74,7 +74,7 @@ if(isset($_GET['category'])){
                             <?php echo $products['description'] ?>
                         </p>
                         <p class="price">
-                            <?php echo $product['price'] ?>
+                            <?php echo $product['price'],'$' ?>
                         </p>
                     </div>
                     <?php
