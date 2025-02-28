@@ -82,7 +82,7 @@ if(isset($_GET['category'])){
                 ?>
 
 
-                <div class="product-left">
+                <!-- <div class="product-left">
                     <img src="products/coding.jpg" alt="">
                 </div>
                 <div class="product-right">
@@ -97,7 +97,7 @@ if(isset($_GET['category'])){
                     <p class="price">
                         200$
                     </p>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>
