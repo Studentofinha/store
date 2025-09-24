@@ -17,6 +17,7 @@ function getCategories()
 {
     $mysqli = dbConnect();
 
+    $categories = [];
     $result = $mysqli->query("SELECT DISTINCT category FROM products");
     while ($row = $result->fetch_assoc()) {
         $categories[] = $row;
@@ -30,10 +31,17 @@ function getCategories()
 function getHomePageProducts($int)
 {
     $mysqli = dbConnect();
-    $result = $mysqli->query("SELECT*FROM products ORDER BY rand() LIMIT $int");
+    $limit = (int) $int;
+    $data = [];
+    // Use prepared statement for safety even with integers
+    $stmt = $mysqli->prepare("SELECT * FROM products ORDER BY RAND() LIMIT ?");
+    $stmt->bind_param("i", $limit);
+    $stmt->execute();
+    $result = $stmt->get_result();
     while ($row = $result->fetch_assoc()) {
         $data[] = $row;
     }
+    $stmt->close();
     return $data;
 
 
@@ -70,7 +78,6 @@ function getProductBytitle($title)
         return $data;
     }
 }
-;
 function getBlogPosts()
 {
     $mysqli = dbConnect();  // Establish database connection

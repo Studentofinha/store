@@ -48,7 +48,7 @@
         <div class="right">
             <div class="section-title">Home page</div>
             <?php
-            $products = getHomePageProducts(4)
+            $products = getHomePageProducts(4);
 
                 ?>
 
