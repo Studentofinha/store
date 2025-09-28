@@ -12,7 +12,7 @@
     <style>
         .blog-posts {
             display: flex;
-            flex-direction: column;
+            flex-direction: column; 
             gap: 20px;
         }
         .blog-post {
